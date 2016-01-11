@@ -72,7 +72,7 @@ func pagerDidSelecedPage(selectedPage: Int)
 ##Auto Fit - Orientation Rotate
 
 <p align="center" >
-<img src="http://blogfiles.naver.net/20160111_242/vowed_1452494985906DuAvE_JPEG/example1.jpg>
+<img src="http://blogfiles.naver.net/20160111_281/vowed_1452494278090Rgt3l_PNG/%BD%BA%C5%A9%B8%B0%BC%A6_2016-01-11_%BF%C0%C8%C4_3.36.38.png>
 </p>
 
 
