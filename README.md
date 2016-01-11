@@ -120,16 +120,3 @@ func pagerDidSelecedPage(selectedPage: Int)
 - 델리게이트를 설정해 놓으면, 페이지가 선택될 때마다 이 메소드가 호출됩니다.
 
 
-
-## License
-
-`HWSwiftyViewPager` is available under the MIT license. See the LICENSE file for more info.
-
-- 라이센스까지 붙일 코드같진 않지만...
-
-
-
-
-
-
-
