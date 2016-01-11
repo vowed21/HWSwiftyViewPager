@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		F54AAA531C43632700124ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA521C43632700124ABE /* AppDelegate.swift */; };
-		F54AAA551C43632700124ABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA541C43632700124ABE /* ViewController.swift */; };
-		F54AAA581C43632700124ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54AAA561C43632700124ABE /* Main.storyboard */; };
-		F54AAA5A1C43632700124ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54AAA591C43632700124ABE /* Assets.xcassets */; };
 		F54AAA5D1C43632700124ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54AAA5B1C43632700124ABE /* LaunchScreen.storyboard */; };
+		F54AAA661C43638300124ABE /* HWSwiftyViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA651C43638300124ABE /* HWSwiftyViewPager.swift */; };
+		F54AAA6B1C4363A100124ABE /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA671C4363A100124ABE /* FirstVC.swift */; };
+		F54AAA6C1C4363A100124ABE /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA681C4363A100124ABE /* SecondVC.swift */; };
+		F54AAA6D1C4363A100124ABE /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA691C4363A100124ABE /* ThirdVC.swift */; };
+		F54AAA6E1C4363A100124ABE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54AAA6A1C4363A100124ABE /* TableViewCell.swift */; };
+		F54AAA711C4363C300124ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54AAA6F1C4363C300124ABE /* Main.storyboard */; };
+		F54AAA721C4363C300124ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54AAA701C4363C300124ABE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F54AAA4F1C43632700124ABE /* HWSwiftyViewPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWSwiftyViewPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54AAA521C43632700124ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F54AAA541C43632700124ABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F54AAA571C43632700124ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F54AAA591C43632700124ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F54AAA5C1C43632700124ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F54AAA5E1C43632700124ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54AAA651C43638300124ABE /* HWSwiftyViewPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HWSwiftyViewPager.swift; path = HWSwiftyViewPager/HWSwiftyViewPager.swift; sourceTree = "<group>"; };
+		F54AAA671C4363A100124ABE /* FirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		F54AAA681C4363A100124ABE /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		F54AAA691C4363A100124ABE /* ThirdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		F54AAA6A1C4363A100124ABE /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F54AAA6F1C4363C300124ABE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F54AAA701C4363C300124ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +46,8 @@
 		F54AAA461C43632700124ABE = {
 			isa = PBXGroup;
 			children = (
-				F54AAA511C43632700124ABE /* HWSwiftyViewPager */,
+				F54AAA641C43636500124ABE /* HWSwiftyViewPager */,
+				F54AAA511C43632700124ABE /* HWSwiftyViewPagerSample */,
 				F54AAA501C43632700124ABE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,15 +60,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F54AAA511C43632700124ABE /* HWSwiftyViewPager */ = {
+		F54AAA511C43632700124ABE /* HWSwiftyViewPagerSample */ = {
 			isa = PBXGroup;
 			children = (
+				F54AAA6F1C4363C300124ABE /* Main.storyboard */,
+				F54AAA701C4363C300124ABE /* Assets.xcassets */,
+				F54AAA671C4363A100124ABE /* FirstVC.swift */,
+				F54AAA681C4363A100124ABE /* SecondVC.swift */,
+				F54AAA691C4363A100124ABE /* ThirdVC.swift */,
+				F54AAA6A1C4363A100124ABE /* TableViewCell.swift */,
 				F54AAA521C43632700124ABE /* AppDelegate.swift */,
-				F54AAA541C43632700124ABE /* ViewController.swift */,
-				F54AAA561C43632700124ABE /* Main.storyboard */,
-				F54AAA591C43632700124ABE /* Assets.xcassets */,
 				F54AAA5B1C43632700124ABE /* LaunchScreen.storyboard */,
 				F54AAA5E1C43632700124ABE /* Info.plist */,
+			);
+			name = HWSwiftyViewPagerSample;
+			path = HWSwiftyViewPager;
+			sourceTree = "<group>";
+		};
+		F54AAA641C43636500124ABE /* HWSwiftyViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				F54AAA651C43638300124ABE /* HWSwiftyViewPager.swift */,
 			);
 			path = HWSwiftyViewPager;
 			sourceTree = "<group>";
@@ -96,6 +117,7 @@
 				TargetAttributes = {
 					F54AAA4E1C43632700124ABE = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = RPHD39GWU7;
 					};
 				};
 			};
@@ -123,8 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54AAA5D1C43632700124ABE /* LaunchScreen.storyboard in Resources */,
-				F54AAA5A1C43632700124ABE /* Assets.xcassets in Resources */,
-				F54AAA581C43632700124ABE /* Main.storyboard in Resources */,
+				F54AAA721C4363C300124ABE /* Assets.xcassets in Resources */,
+				F54AAA711C4363C300124ABE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +157,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54AAA551C43632700124ABE /* ViewController.swift in Sources */,
+				F54AAA661C43638300124ABE /* HWSwiftyViewPager.swift in Sources */,
+				F54AAA6B1C4363A100124ABE /* FirstVC.swift in Sources */,
+				F54AAA6C1C4363A100124ABE /* SecondVC.swift in Sources */,
+				F54AAA6E1C4363A100124ABE /* TableViewCell.swift in Sources */,
 				F54AAA531C43632700124ABE /* AppDelegate.swift in Sources */,
+				F54AAA6D1C4363A100124ABE /* ThirdVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F54AAA561C43632700124ABE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F54AAA571C43632700124ABE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F54AAA5B1C43632700124ABE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -247,7 +265,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HWSwiftyViewPager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokohapps.HWSwiftyViewPager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,7 +278,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = HWSwiftyViewPager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokohapps.HWSwiftyViewPager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,6 +306,7 @@
 				F54AAA631C43632700124ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
