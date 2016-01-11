@@ -64,7 +64,7 @@ func pagerDidSelecedPage(selectedPage: Int)
 ## Part of Side Preview || Full
 
 <p align="center" >
-<img src="https://scontent-b.xx.fbcdn.net/hphotos-xfp1/t31.0-8/10922361_828736803853340_8377129052548269031_o.jpg">
+<img src="http://blogfiles.naver.net/20160111_242/vowed_1452494985906DuAvE_JPEG/example1.jpg">
 </p>
 
 
