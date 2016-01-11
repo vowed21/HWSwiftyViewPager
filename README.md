@@ -59,22 +59,6 @@ func pagerDidSelecedPage(selectedPage: Int)
 
 
 
-#Example
-
-## Part of Side Preview || Full
-
-<p align="center" >
-<img src="http://blogfiles.naver.net/20160111_242/vowed_1452494985906DuAvE_JPEG/example1.jpg">
-</p>
-
-
-
-##Auto Fit - Orientation Rotate
-
-<p align="center" >
-<img src="http://blogfiles.naver.net/20160111_281/vowed_1452494278090Rgt3l_PNG/%BD%BA%C5%A9%B8%B0%BC%A6_2016-01-11_%BF%C0%C8%C4_3.36.38.png>
-</p>
-
 
 
 # HWSwiftyViewPager
@@ -118,5 +102,21 @@ func pagerDidSelecedPage(selectedPage: Int)
 
 - 델리게이트 설정하기 : `viewPager.pageSelectedDelegate = self (or TARGET)`
 - 델리게이트를 설정해 놓으면, 페이지가 선택될 때마다 이 메소드가 호출됩니다.
+
+
+
+
+#Example
+
+
+<p align="center" >
+<img src="http://blogfiles.naver.net/20160111_242/vowed_1452494985906DuAvE_JPEG/example1.jpg">
+</p>
+
+
+<p align="center" >
+<img src="http://blogfiles.naver.net/20160111_281/vowed_1452494278090Rgt3l_PNG/%BD%BA%C5%A9%B8%B0%BC%A6_2016-01-11_%BF%C0%C8%C4_3.36.38.png>
+</p>
+
 
 
