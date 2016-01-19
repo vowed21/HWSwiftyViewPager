@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HWSwiftyViewPager"
-  s.version      = "1.0.0"
+  s.version      = "1.1"
   s.summary      = "ViewPager likes android's"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Support - Preview Left Right Side Partially, Full Screen in Auto Layout, Auto Fi
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/vowed21/HWSwiftyViewPager.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/vowed21/HWSwiftyViewPager.git", :tag => "1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

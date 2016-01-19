@@ -23,9 +23,18 @@
 
 - **UICollectionViewFlowLayout**
 - **Don't Use SectionView in UICollectionView**
-- **Initialize by Storyboard
+- **Initialize by Storyboard**
 
 ## Usage
+
+#### CocoaPods
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'HWSwiftyViewPager', '1.1'
+```
 
 #### Full Screen in "Auto Layout"
 - Configure "Section Inset" Left = 0, Right = 0, minimumLineSpacing = 0 ... in FlowLayout (Use storyboard) 
