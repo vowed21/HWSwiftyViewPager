@@ -9,7 +9,7 @@
 
 import UIKit
 
-class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
+public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     enum PagerControlState : Int {
         case StayCurrent = 0
@@ -29,7 +29,7 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     var pageSelectedDelegate : HWSwiftyViewPagerDelegate?
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.scrollEnabled = true
@@ -48,7 +48,7 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         //현재 뷰의 프레임 크기와 이전의 프레임과 다르다면, 아이템의 크기도 함게 바꿔준다.
@@ -72,7 +72,7 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     
     
-    override func reloadData() {
+    override public func reloadData() {
         super.reloadData()
         
         self.itemsTotalCount = 0
@@ -88,12 +88,12 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     }
     
     //MARK: ScrollViewDelegate
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         self.scrollBeginOffset = scrollView.contentOffset.x
         self.pagerControlState = .StayCurrent
     }
     
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    public func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         //타겟 포인트를 저장.
         var point = targetContentOffset.memory
@@ -135,7 +135,7 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     }
     
     
-    func setPage(pageNum pageNum:Int, isAnimation:Bool){
+    public func setPage(pageNum pageNum:Int, isAnimation:Bool){
         if pageNum == self.selectedPageNum || pageNum >= itemsTotalCount {
             return
         }
@@ -163,6 +163,6 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     }
 }
 
-protocol HWSwiftyViewPagerDelegate {
+public protocol HWSwiftyViewPagerDelegate {
     func pagerDidSelecedPage(selectedPage: Int)
 }
