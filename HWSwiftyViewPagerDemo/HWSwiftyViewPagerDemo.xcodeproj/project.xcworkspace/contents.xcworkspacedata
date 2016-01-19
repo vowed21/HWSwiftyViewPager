@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HWSwiftyViewPager.xcodeproj">
+      location = "self:HWSwiftyViewPagerDemo.xcodeproj">
    </FileRef>
 </Workspace>

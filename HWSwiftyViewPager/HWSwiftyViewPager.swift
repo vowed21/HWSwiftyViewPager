@@ -41,14 +41,18 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
         self.flowLayout.scrollDirection = .Horizontal
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
+        self.beforeFrame = self.frame
     }
+    
+    
+    
     
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         //현재 뷰의 프레임 크기와 이전의 프레임과 다르다면, 아이템의 크기도 함게 바꿔준다.
-        if beforeFrame == nil || !CGRectEqualToRect(self.frame, self.beforeFrame) {
+        if !CGRectEqualToRect(self.frame, self.beforeFrame) {
             let widthNew = self.frame.size.width - (self.flowLayout.sectionInset.left * 2) - self.flowLayout.minimumLineSpacing
             let heightNew = self.frame.size.height - self.flowLayout.sectionInset.top - self.flowLayout.sectionInset.bottom
             self.flowLayout.itemSize = CGSizeMake(widthNew, heightNew)
@@ -60,6 +64,7 @@ class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
             //현재 선택된 페이지의 오프셋으로 이동시켜준다.
             let targetX = self.getOffSetFromPage(self.selectedPageNum, scrollView: self)
             self.contentOffset = CGPointMake(targetX, 0)
+            self.layoutIfNeeded()
         }
         
     }
