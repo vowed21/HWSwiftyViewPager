@@ -85,6 +85,7 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
         //새로 불러왔을 때, 페이지넘을 0으로, 오프셋도 0으로 이동시켜준다.
         self.selectedPageNum = 0
         self.contentOffset = CGPointMake(0, 0)
+        self.layoutIfNeeded()
     }
     
     //MARK: ScrollViewDelegate
