@@ -25,15 +25,12 @@
 - **Don't Use SectionView in UICollectionView**
 - **Initialize by Storyboard**
 
-## Usage
-
-#### CocoaPods
+### Usage
+ 
 ```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
+Download the file "HWSwiftyViewPager.swift",
+and import your project
 
-pod 'HWSwiftyViewPager', '1.1'
 ```
 
 #### Full Screen in "Auto Layout"
@@ -58,13 +55,13 @@ HWSwiftyViewPagerDelegate
 func pagerDidSelecedPage(selectedPage: Int)
 ```
 
-- `HWSwiftyViewPager.pageSelectedDelegate = TARGET`
+- `viewPager.pageSelectedDelegate = TARGET`
 
 
 
 ## License
 
-`HWViewPager` is available under the MIT license. See the LICENSE file for more info.
+`HWSwiftyViewPager` is available under the MIT license. See the LICENSE file for more info.
 
 
 
