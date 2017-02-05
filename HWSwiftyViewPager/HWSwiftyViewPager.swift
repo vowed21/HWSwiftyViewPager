@@ -9,36 +9,36 @@
 
 import UIKit
 
-public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
+open class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     enum PagerControlState : Int {
-        case StayCurrent = 0
-        case ToLeft = 1
-        case ToRight = 2
+        case stayCurrent = 0
+        case toLeft = 1
+        case toRight = 2
     }
     
-    private let VELOCITY_STANDARD : CGFloat = 0.6
+    fileprivate let VELOCITY_STANDARD : CGFloat = 0.6
     
-    private var flowLayout: UICollectionViewFlowLayout!
-    private var beforeFrame: CGRect! = nil
-    private var itemsTotalCount = 0
-    private var selectedPageNum = 0
-    private var itemWidthWithMargin :CGFloat = 0
-    private var scrollBeginOffset :CGFloat = 0
-    private var pagerControlState = PagerControlState.StayCurrent
+    fileprivate var flowLayout: UICollectionViewFlowLayout!
+    fileprivate var beforeFrame: CGRect! = nil
+    fileprivate var itemsTotalCount = 0
+    fileprivate var selectedPageNum = 0
+    fileprivate var itemWidthWithMargin :CGFloat = 0
+    fileprivate var scrollBeginOffset :CGFloat = 0
+    fileprivate var pagerControlState = PagerControlState.stayCurrent
     
     var pageSelectedDelegate : HWSwiftyViewPagerDelegate?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.scrollEnabled = true
-        self.pagingEnabled = false
+        self.isScrollEnabled = true
+        self.isPagingEnabled = false
         self.delegate = self
         self.decelerationRate = UIScrollViewDecelerationRateFast
         
         self.flowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        self.flowLayout.scrollDirection = .Horizontal
+        self.flowLayout.scrollDirection = .horizontal
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         self.beforeFrame = self.frame
@@ -48,14 +48,14 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         //현재 뷰의 프레임 크기와 이전의 프레임과 다르다면, 아이템의 크기도 함게 바꿔준다.
-        if !CGRectEqualToRect(self.frame, self.beforeFrame) {
+        if !self.frame.equalTo(self.beforeFrame) {
             let widthNew = self.frame.size.width - (self.flowLayout.sectionInset.left * 2) - self.flowLayout.minimumLineSpacing
             let heightNew = self.frame.size.height - self.flowLayout.sectionInset.top - self.flowLayout.sectionInset.bottom
-            self.flowLayout.itemSize = CGSizeMake(widthNew, heightNew)
+            self.flowLayout.itemSize = CGSize(width: widthNew, height: heightNew)
             
             self.beforeFrame = self.frame
             
@@ -63,7 +63,7 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
             
             //현재 선택된 페이지의 오프셋으로 이동시켜준다.
             let targetX = self.getOffSetFromPage(self.selectedPageNum, scrollView: self)
-            self.contentOffset = CGPointMake(targetX, 0)
+            self.contentOffset = CGPoint(x: targetX, y: 0)
             self.layoutIfNeeded()
         }
         
@@ -72,39 +72,39 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     
     
-    override public func reloadData() {
+    override open func reloadData() {
         super.reloadData()
         
         self.itemsTotalCount = 0
         
-        let sectionCount = self.numberOfSections()
+        let sectionCount = self.numberOfSections
         for section in 0..<sectionCount {
             self.itemsTotalCount = self.itemsTotalCount + self.dataSource!.collectionView(self, numberOfItemsInSection: section)
         }
         
         //새로 불러왔을 때, 페이지넘을 0으로, 오프셋도 0으로 이동시켜준다.
         self.selectedPageNum = 0
-        self.contentOffset = CGPointMake(0, 0)
+        self.contentOffset = CGPoint(x: 0, y: 0)
         self.layoutIfNeeded()
     }
     
     //MARK: ScrollViewDelegate
-    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.scrollBeginOffset = scrollView.contentOffset.x
-        self.pagerControlState = .StayCurrent
+        self.pagerControlState = .stayCurrent
     }
     
-    public func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         //타겟 포인트를 저장.
-        var point = targetContentOffset.memory
+        var point = targetContentOffset.pointee
         
         //벨로서티 기준에 따라서 이동 여부를 결정한다.
         if velocity.x > VELOCITY_STANDARD {
-            self.pagerControlState = .ToRight
+            self.pagerControlState = .toRight
         }
         else if velocity.x < -VELOCITY_STANDARD {
-            self.pagerControlState = .ToLeft
+            self.pagerControlState = .toLeft
         }
         
         //총 스크롤 한 거리를 구한다.
@@ -113,17 +113,17 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
         
         //컨텐츠 크기의 반만큼보다 많이 스크롤을 했다면,
         if scrollDistance < -standardDistance {
-            self.pagerControlState = .ToRight
+            self.pagerControlState = .toRight
         }
         else if scrollDistance > standardDistance {
-            self.pagerControlState = .ToLeft
+            self.pagerControlState = .toLeft
         }
         
         //선택 페이지를 결정한다.
-        if self.pagerControlState == .ToLeft && self.selectedPageNum > 0 {
+        if self.pagerControlState == .toLeft && self.selectedPageNum > 0 {
             self.selectedPageNum -= 1
         }
-        else if self.pagerControlState == .ToRight && selectedPageNum < (itemsTotalCount - 1) {
+        else if self.pagerControlState == .toRight && selectedPageNum < (itemsTotalCount - 1) {
             self.selectedPageNum += 1
         }
         
@@ -131,18 +131,18 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
         self.pageSelectedDelegate?.pagerDidSelecedPage(selectedPageNum)
         
         point.x = self.getOffSetFromPage(self.selectedPageNum, scrollView: scrollView)
-        targetContentOffset.memory = point
+        targetContentOffset.pointee = point
         
     }
     
     
-    public func setPage(pageNum pageNum:Int, isAnimation:Bool){
+    open func setPage(pageNum:Int, isAnimation:Bool){
         if pageNum == self.selectedPageNum || pageNum >= itemsTotalCount {
             return
         }
         
         let offset = getOffSetFromPage(pageNum, scrollView: self)
-        self.setContentOffset(CGPointMake(offset, 0), animated: isAnimation)
+        self.setContentOffset(CGPoint(x: offset, y: 0), animated: isAnimation)
         self.selectedPageNum = pageNum
         self.pageSelectedDelegate?.pagerDidSelecedPage(pageNum)
     }
@@ -151,7 +151,7 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
     
     
     //페이지 번호로 offset 을 구하기.
-    private func getOffSetFromPage(pageNum: Int, scrollView:UIScrollView) -> CGFloat {
+    fileprivate func getOffSetFromPage(_ pageNum: Int, scrollView:UIScrollView) -> CGFloat {
         if pageNum == 0 {
             return 0
         }
@@ -165,5 +165,5 @@ public class HWSwiftyViewPager: UICollectionView, UICollectionViewDelegate {
 }
 
 public protocol HWSwiftyViewPagerDelegate {
-    func pagerDidSelecedPage(selectedPage: Int)
+    func pagerDidSelecedPage(_ selectedPage: Int)
 }
