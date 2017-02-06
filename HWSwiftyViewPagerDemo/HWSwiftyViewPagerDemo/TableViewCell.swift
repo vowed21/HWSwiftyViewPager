@@ -21,18 +21,18 @@ class TableViewCell: UITableViewCell, UICollectionViewDataSource, HWSwiftyViewPa
     
     
     //MARK: CollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath)
         return cell
     }
     
     
     //MARK: HWSwiftyViewPagerDelegate
-    func pagerDidSelecedPage(selectedPage: Int) {
+    func pagerDidSelecedPage(_ selectedPage: Int) {
         let string = "SelectedPage = \(selectedPage)"
         self.label.text = string
     }

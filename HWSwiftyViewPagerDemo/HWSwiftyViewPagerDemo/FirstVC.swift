@@ -21,28 +21,28 @@ class FirstVC: UIViewController, UICollectionViewDataSource, HWSwiftyViewPagerDe
     
     
     //MARK: CollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FullCollectionCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FullCollectionCell", for: indexPath)
         return cell
     }
     
     
     //MARK: HWSwiftyViewPagerDelegate
-    func pagerDidSelecedPage(selectedPage: Int) {
+    func pagerDidSelecedPage(_ selectedPage: Int) {
         let string = "SectionInset Left,Right = 30\nminLineSpacing = 20\nSelectedPage = \(selectedPage)"
         self.label.text = string
     }
 
     
-    @IBAction func clickGoToPage0(sender: AnyObject) {
+    @IBAction func clickGoToPage0(_ sender: AnyObject) {
         self.pager.setPage(pageNum: 0, isAnimation: false)
     }
     
-    @IBAction func clickGoToPage2(sender: AnyObject) {
+    @IBAction func clickGoToPage2(_ sender: AnyObject) {
         self.pager.setPage(pageNum: 2, isAnimation: true)
     }
 }
